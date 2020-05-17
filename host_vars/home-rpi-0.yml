@@ -1,0 +1,15 @@
+#IP given by the DHCP server
+ansible_host: 192.168.1.55
+
+#hostname
+hostname: rpi.local
+
+#Final values to apply to the rpi
+ipv4_addr: 192.168.1.2
+ipv4_mask: 24
+ipv4: "{{ ipv4_addr }}/{{ ipv4_mask }}" #Do not change
+
+
+
+
+

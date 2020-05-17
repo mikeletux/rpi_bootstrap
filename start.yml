@@ -1,0 +1,11 @@
+---
+- name: Bootstrap Raspberry Pi 4
+  hosts: all
+  become: yes
+  roles:
+    # - rpi_create_users
+    - rpi_config_network    
+
+#After roles have been run, remove the ubuntu (default) user
+#At this point we are sure that network and users (with their ssh keys) are well installed
+

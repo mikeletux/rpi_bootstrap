@@ -1,0 +1,12 @@
+# {{ ansible_managed }}
+network: 
+  version: 2
+  ethernets:
+    eth0:
+      addresses:
+        - {{ ipv4 }}
+      gateway4: {{ ipv4_gw }}
+      nameservers:
+        addresses: [{{ ipv4_dns1 }}, {{ ipv4_dns2 }}]
+
+    

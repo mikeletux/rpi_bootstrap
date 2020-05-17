@@ -1,0 +1,7 @@
+#Vars regarding all host within rpi group
+#Ipv4 gateway
+ipv4_gw: 192.168.1.1
+
+#ipv4 DNSs
+ipv4_dns1: 8.8.8.8
+ipv4_dns2: 8.8.4.4

@@ -1,0 +1,27 @@
+---
+# tasks file for rpi_config_network
+#TODO
+  #Config desired hostname
+  #Config desired IP address
+  #Config NTP to keep it synced
+
+- name: Set hostname
+  hostname:
+    name: "{{ hostname }}"
+    use: systemd
+
+- name: Remove default netplan file
+  file:
+    path: /etc/netplan/50-cloud-init.yaml
+    state: absent
+
+- name: Set networking using netplan
+  template:
+    src: netplan.j2
+    dest: /etc/netplan/50-ansible-managed-nw.yaml
+    mode: 0644
+
+- name: Apply netplan
+  command: netplan apply
+  ignore_errors: yes
+      
