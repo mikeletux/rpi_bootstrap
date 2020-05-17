@@ -1,0 +1,30 @@
+---
+# tasks file for rpi_config_users
+- name: Create ansible user for management
+  user:
+    name: "{{ management_user }}"
+    comment: Ansible management account
+    shell: /bin/bash
+    create_home: yes
+
+- name: Add public ssh key for ansible management user
+  authorized_key:
+    user: "{{ management_user }}"
+    state: present
+    key: "{{ management_ssh_public_key }}"
+
+- name: Create sudoers.d entry for scalating to root without password for ansible user
+  template:
+    src: 95-ansible-user.j2
+    dest: /etc/sudoers.d/95-ansible-user
+    mode: 0440
+
+- name: Create additional admin users
+  user:
+    name: "{{ item.user }}"
+    password: "{{ item.pass | password_hash('sha512') }}"
+    append: yes
+    groups: sudo
+    shell: /bin/bash
+    create_home: yes
+  loop: "{{ admin_users }}"

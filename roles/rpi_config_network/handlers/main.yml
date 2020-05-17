@@ -1,2 +1,5 @@
 ---
 # handlers file for rpi_config_network
+- name: Apply netplan
+  command: netplan apply
+  ignore_errors: yes

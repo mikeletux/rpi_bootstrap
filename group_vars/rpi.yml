@@ -5,3 +5,8 @@ ipv4_gw: 192.168.1.1
 #ipv4 DNSs
 ipv4_dns1: 8.8.8.8
 ipv4_dns2: 8.8.4.4
+
+#ssh key for ansible user
+#this user is intended to manage all rpis using key auth for ansible comm
+management_user: ansible
+management_ssh_public_key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC3gRIPXXddeaWr59jyYMcpWz4uIbaFgUXNPIuk2A5MqapvU3J7G72tEJOPfhcZxQMOpUBk6qqWpldbrvg/911YVo8XRjJ2KGvuKYHgJpr658A4rx3H/VFLpfbGZv65e1Ybu/YPMmSna/i2VgY4HKGeFVOk2GWwtWvp8RhFDlYkrvn/q8IP+XR8GU01mDnMwejlcENLCdUWApVUV4w1cxdvS2zUKmIx/6+naGH0Rjis/PnljfqWrSWp3keeVxAjKaGsPc0HrCblW3BzbblDiV3lMkZe7NpFSHJRM4vYZOKqdCLL0HXpvmT7BZJ2k4EvIo7VoWKf1lmWdsG1uNVvrmUXs2paBK/EGTKvwsnw7KrR4dxUdy8V+AlSgG9a04iHPFjIcxI2U9rY+K512rbu+u76wMNo3tJAKtOcKiSO0P2SBa9yyP9eYUtBQNYDZFcJp8AtJbONfK6IaKDv9jMYEBpY2c053/CNsbIACbLASeb2/Nn/GYCUgNHwj7rfpqQ6t40= ansible@ansible

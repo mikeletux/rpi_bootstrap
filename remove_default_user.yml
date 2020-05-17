@@ -1,0 +1,16 @@
+---
+- name: Remove default user for ubuntu
+  hosts: rpi_static_ip
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: Remove ubuntu user
+      user:
+        name: ubuntu
+        state: absent
+        remove: yes
+
+    - name: Remove entry from sudoers.d for ubuntu user
+      file:
+        path: /etc/sudoers.d/90-cloud-init-users
+        state: absent

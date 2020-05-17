@@ -20,8 +20,6 @@
     src: netplan.j2
     dest: /etc/netplan/50-ansible-managed-nw.yaml
     mode: 0644
+  notify: Apply netplan
 
-- name: Apply netplan
-  command: netplan apply
-  ignore_errors: yes
       

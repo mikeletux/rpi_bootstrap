@@ -1,2 +1,5 @@
-[rpi]
+[rpi_dhcp]
 home-rpi-0
+
+[rpi_static_ip]
+home-rpi-0-final ansible_host=192.168.1.2
